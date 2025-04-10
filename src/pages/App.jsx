@@ -7,15 +7,16 @@ import Home from './Home.jsx'
 function App() {
   return (
     <Router>
-       <div className="App p-10 bg-blue-500 text-white">
-         <h1 className="text-3xl">¡Hola, Tailwind y React!</h1>
+      <div className="App bg-secundario text-primario">
         <Header />
         <Navbar />
         
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* Agrega más rutas aquí luego */}
-        </Routes>
+        <main className="border-t-2 border-gold">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            {/* Agrega más rutas aquí luego */}
+          </Routes>
+        </main>
         
         <Footer />
       </div>
