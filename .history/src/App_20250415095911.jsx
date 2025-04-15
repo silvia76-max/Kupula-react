@@ -9,7 +9,7 @@ import ContactSection from "./components/ContactSection.jsx";
 import Footer from "./components/Footer.jsx";
 
 import Login from "./pages/user/Login.jsx"; 
-import Profile from "./pages/user/Profile.jsx";
+import Profile from "./pages/user/profile.jsx"; 
 import Dashboard from "./pages/admin/Dashboard.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 
