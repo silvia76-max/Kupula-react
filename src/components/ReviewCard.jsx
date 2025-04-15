@@ -1,23 +1,22 @@
-// src/components/ReviewCard.jsx
-
 import React from "react";
+import "../styles/ReviewCard.css";
 
 const ReviewCard = ({ name, avatar, rating, comment, date }) => {
   return (
-    <div className="bg-white shadow-md rounded-2xl p-4 max-w-md w-full mx-auto">
-      <div className="flex items-center mb-2">
+    <div className="review-card">
+      <div className="review-header">
         <img
           src={avatar}
           alt={`${name} avatar`}
-          className="w-12 h-12 rounded-full mr-3"
+          className="review-avatar"
         />
-        <div>
-          <h4 className="text-lg font-semibold">{name}</h4>
-          <p className="text-sm text-gray-500">{new Date(date).toLocaleDateString()}</p>
+        <div className="review-info">
+          <h4>{name}</h4>
+          <p>{new Date(date).toLocaleDateString()}</p>
         </div>
       </div>
 
-      <div className="flex items-center mb-2">
+      <div className="review-stars">
         {[...Array(5)].map((_, i) => (
           <span key={i}>
             {i < rating ? "⭐" : "☆"}
@@ -25,7 +24,7 @@ const ReviewCard = ({ name, avatar, rating, comment, date }) => {
         ))}
       </div>
 
-      <p className="text-gray-700">{comment}</p>
+      <p className="review-comment">{comment}</p>
     </div>
   );
 };

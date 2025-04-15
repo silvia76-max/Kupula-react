@@ -13,7 +13,7 @@ import Profile from "./pages/user/Profile.jsx";
 import Dashboard from "./pages/admin/Dashboard.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 
-import "./app.css"; 
+import "./index.css"; 
 
 function App() {
   return (

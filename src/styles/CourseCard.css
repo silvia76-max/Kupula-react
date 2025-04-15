@@ -1,0 +1,46 @@
+/* Estilos para CourseCard */
+.course-card {
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    max-width: 320px; /* Máximo ancho */
+    margin: 16px; /* Margen entre tarjetas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones para hover */
+  }
+  
+  .course-card:hover {
+    transform: translateY(-8px); /* Movimiento hacia arriba */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Aumento de sombra en hover */
+  }
+  
+  .course-title {
+    font-size: 1.5rem; /* Tamaño del título */
+    font-weight: bold; /* Negrita */
+    color: #ffd700; /* Color dorado */
+    margin-bottom: 12px; /* Espaciado debajo del título */
+  }
+  
+  .course-description {
+    font-size: 1rem; /* Tamaño del texto */
+    color: #ccc; /* Color gris claro */
+    margin-bottom: 16px; /* Espaciado debajo de la descripción */
+  }
+  
+  .course-button {
+    background-color: #ffd700; /* Color dorado */
+    color: #1a1a1a; /* Texto oscuro */
+    padding: 12px 24px; /* Relleno del botón */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold;
+    border-radius: 50px; /* Bordes redondeados */
+    text-align: center;
+    display: inline-block; /* Para que el botón no ocupe toda la línea */
+    transition: background-color 0.3s ease;
+  }
+  
+  .course-button:hover {
+    background-color: #ffcc00; /* Cambio de color en hover */
+  }
+  

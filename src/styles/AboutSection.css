@@ -1,0 +1,37 @@
+.about-section {
+    background-color: #000; /* o el color que usabas como 'negro' en Tailwind */
+    color: #ccc; /* reemplaza 'text-gris' */
+    padding: 4rem 1.5rem; /* px-6 py-16 */
+  }
+  
+  @media (min-width: 768px) {
+    .about-section {
+      padding-left: 5rem; /* md:px-20 */
+      padding-right: 5rem;
+    }
+  }
+  
+  .about-content {
+    max-width: 64rem; /* equivalente a max-w-4xl */
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .about-title {
+    color: #d4af37; /* reemplaza 'text-dorado' */
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-text {
+    font-size: 1.125rem; /* text-lg */
+    line-height: 1.75;
+    margin-top: 1.5rem;
+  }
+  
+  .about-highlight {
+    color: #d4af37;
+    font-weight: 600;
+  }
+  

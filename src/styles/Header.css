@@ -1,0 +1,37 @@
+/* Header.css */
+
+.header {
+    background-color: #000; /* negro */
+    color: #FFD700; /* dorado */
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .header .logo {
+    width: 100px; /* Ajusta el tamaño del logo según sea necesario */
+    height: auto;
+  }
+  
+  .header nav {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .header nav a {
+    text-decoration: none;
+    color: #FFD700; /* dorado */
+    transition: color 0.3s ease;
+  }
+  
+  .header nav a:hover {
+    color: #fff; /* blanco */
+  }
+  
