@@ -1,9 +1,10 @@
 import "../styles/HeroSection.css"; // Asegúrate de importar el archivo CSS
-
+import salonImg from "/src/assets/images/salonkupula.jpg";
 const HeroSection = () => {
   return (
     <section className="hero" id="inicio">
-      <img src="../assets/images/salon-kupula.jpg" alt="Akademia La Kupula" />
+
+     <img src={salonImg} alt="Akademia La Kupula" />
 
       <div className="content">
         <h1>Formación en Estética Profesional</h1>

@@ -1,36 +1,96 @@
 /* Header.css */
 
 .header {
-    background-color: #000; /* negro */
-    color: #FFD700; /* dorado */
-    padding: 1rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #000; /* Negro */
+  color: #FFD700; /* Dorado */
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo, .header-image {
+  width: 100px; /* Ajusta el tamaño de las imágenes */
+  height: auto;
+}
+
+.header-center {
+  flex: 1;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #FFD700; /* Dorado */
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+nav a:hover {
+  color: #fff; /* Blanco */
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #FFD700; /* Dorado */
+}
+
+.menu-icon:hover {
+  color: #fff;
+}
+
+/* Estilos para el menú hamburguesa */
+.header-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.header-nav.open {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
   }
-  
-  .header .logo {
-    width: 100px; /* Ajusta el tamaño del logo según sea necesario */
-    height: auto;
+
+  .header-left, .header-right {
+    margin-bottom: 1rem;
   }
-  .header h1 {
-    font-size: 1.5rem;
-    font-weight: bold;
+
+  .header-nav {
+    display: none; /* Ocultamos el menú por defecto en móviles */
+    flex-direction: column;
+    margin-top: 1rem;
   }
-  
-  .header nav {
-    display: flex;
-    gap: 1rem;
+
+  .header-nav.open {
+    display: flex; /* Mostramos el menú cuando está abierto */
   }
-  
-  .header nav a {
-    text-decoration: none;
-    color: #FFD700; /* dorado */
-    transition: color 0.3s ease;
+
+  .menu-icon {
+    display: block; /* Mostramos el icono hamburguesa en móviles */
   }
-  
-  .header nav a:hover {
-    color: #fff; /* blanco */
-  }
-  
+}
