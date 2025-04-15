@@ -1,0 +1,55 @@
+/* Establecer el fondo de toda la página */
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Títulos en dorado */
+  h1, h2, h3, h4, h5, h6 {
+    color: gold;
+    font-weight: bold;
+  }
+  
+  /* Enlaces en dorado */
+  a {
+    color: gold;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Botones con fondo dorado */
+  button {
+    background-color: gold;
+    color: black;
+    border: 2px solid gold;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  /* Efecto en hover para botones */
+  button:hover {
+    background-color: #ffd700; /* Slightly lighter gold */
+    transform: scale(1.05);
+  }
+  
+  /* Estilos para iconos */
+  i, svg {
+    color: gold;
+    font-size: 24px;
+    transition: transform 0.3s;
+  }
+  
+  /* Efecto hover para iconos */
+  i:hover, svg:hover {
+    transform: scale(1.2);
+  }
+  

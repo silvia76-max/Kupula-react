@@ -5,7 +5,8 @@ const HeroSection = () => {
       className="h-[90vh] flex items-center justify-center bg-negro text-center relative overflow-hidden"
       id="inicio"
     >
-       <img src="assets/entrada-kupula.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-10" /> 
+      {/* Fondo opcional con imagen difuminada */}
+      {/* <img src="/path/to/bg.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-10" /> */}
 
       <div className="z-10 px-6">
         <h1 className="text-dorado text-5xl md:text-6xl font-bold mb-6">

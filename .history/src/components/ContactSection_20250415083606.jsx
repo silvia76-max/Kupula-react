@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faEnvelope } from "@fortawesome/free-solid-svg-icons"; 
 
 const ContactSection = () => {
   return (
@@ -36,10 +34,6 @@ const ContactSection = () => {
           Enviar mensaje
         </button>
       </form>
-      <div>
-      <FontAwesomeIcon icon={faUser} /> Usuario
-      <FontAwesomeIcon icon={faEnvelope} /> Contacto
-    </div>
     </section>
   );
 };
