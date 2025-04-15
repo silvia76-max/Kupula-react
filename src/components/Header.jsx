@@ -1,46 +1,39 @@
-import React, { useState } from 'react';
-import logo from '../assets/images/logo.png'; // Asegúrate de tener la imagen del logo
-import taniaImage from '../assets/images/fundadora.jpg'; // Imagen de Tania
-import { FaBars, FaUser } from 'react-icons/fa'; // Importamos los íconos de hamburguesa y login
+// Header.jsx
+import React, { useState } from "react";
+import logo from "../assets/images/vinilo-logo.png";
+import taniaImage from "../assets/images/fundadora.jpg";
+import { FaBars, FaUser, FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import "../styles/Header.css";
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false); // Estado para el menú hamburguesa
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <header className="header">
-      <div className="header-left">
-        <img src={logo} alt="Logo de Akademia La Kúpula" className="header-logo" />
-      </div>
-
-      <div className="header-center">
-        <h1>Akademia La Kúpula</h1>
-      </div>
-
-      <div className="header-right">
-        <img src={taniaImage} alt="Tania Calvo" className="header-image" />
-      </div>
-
-      <nav className={`header-nav ${menuOpen ? 'open' : ''}`}>
-        <a href="/login" className="nav-item">
-          <FaUser /> Login
-        </a>
-        <a href="https://wa.me/tu-numero" className="nav-item">
-          WhatsApp
-        </a>
-        <a href="https://www.facebook.com/tu-pagina" className="nav-item">
-          Facebook
-        </a>
-        <a href="https://www.instagram.com/tu-pagina" className="nav-item">
-          Instagram
-        </a>
-      </nav>
-
-      <div className="menu-icon" onClick={toggleMenu}>
-        <FaBars />
+      <div className="header-top">
+        <img src={logo} alt="Logo de Akademia" className="header-logo" />
+        <div className="header-title">
+          <h1>Akademia La Kúpula</h1>
+          <div className="header-icons">
+            <FaUser className="icon" title="Login" />
+            <FaWhatsapp className="icon" title="WhatsApp" />
+            <FaFacebook className="icon" title="Facebook" />
+            <FaInstagram className="icon" title="Instagram" />
+          </div>
+          <button className="menu-toggle" onClick={toggleMenu}>
+          <FaBars />
+        </button>
+        {isMenuOpen && (
+          <nav className="nav-menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#cursos">Cursos</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
+        )}
+        </div>
+        <img src={taniaImage} alt="Tania Calvo" className="header-tania" />
       </div>
     </header>
   );
