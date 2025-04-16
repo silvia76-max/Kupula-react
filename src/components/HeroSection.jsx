@@ -1,5 +1,8 @@
-import "../styles/HeroSection.css"; // Asegúrate de importar el archivo CSS
+import "../styles/HeroSection.css"; 
 import salonImg from "/src/assets/images/salonkupula.jpg";
+import GoldenButton from "./GoldenButton.jsx";  
+
+
 const HeroSection = () => {
   return (
     <section className="hero" id="inicio">
@@ -11,9 +14,7 @@ const HeroSection = () => {
         <p>
           Aprende de expertas en el sector. Cursos presenciales y online con estilo y calidad.
         </p>
-        <a href="#cursos" className="cta-button">
-          Ver Cursos
-        </a>
+        <GoldenButton text="Ver Cursos" href="#cursos" />
       </div>
     </section>
   );

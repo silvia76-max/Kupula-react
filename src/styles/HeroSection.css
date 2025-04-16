@@ -41,11 +41,4 @@
     margin-right: auto;
   }
   
-  .hero .cta-button {
-    background-color: #FFD700; /* dorado */
-    color: black;
-    padding: 0.75rem 1.5rem;
-    border-radius: 9999px;
-    font-weight: 600;
-    text-decoration: none;
-  }
+  

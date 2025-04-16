@@ -1,11 +1,13 @@
-// src/components/GoldenButton.jsx
-const GoldenButton = ({ text, link }) => {
-    return (
-      <a href={link} className="golden-button">
-        {text}
-      </a>
-    );
-  };
-  
-  export default GoldenButton;
-  
+// GoldenButton.jsx
+import React from "react";
+import "../styles/GoldenButton.css";  
+
+const GoldenButton = ({ text, href }) => {
+  return (
+    <a href={href} className="golden-button">
+      {text}
+    </a>
+  );
+};
+
+export default GoldenButton;
