@@ -1,59 +1,96 @@
-/* ContactSection.css */
-
+/* --- Sección de contacto --- */
 .contact-section {
-    background-color: #000; /* reemplazo de bg-negro */
-    padding: 4rem 1.5rem;
-    text-align: center;
-    color: #ccc; /* color del texto general */
-  }
-  
-  .contact-section h2 {
-    color: #ffd700; /* reemplazo de text-dorado */
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-  }
-  
-  .contact-section p {
-    font-size: 1.125rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .contact-section form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .contact-section input,
-  .contact-section textarea {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    background-color: #1a1a1a;
-    color: white;
-    border: 1px solid #ffd700;
-    outline: none;
-  }
-  
-  .contact-section button {
-    background-color: #ffd700;
-    color: black;
-    padding: 0.75rem 1.5rem;
-    border-radius: 9999px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .contact-section button:hover {
-    background-color: #ffea00;
-  }
-  
-  .contact-section .icon-group {
-    margin-top: 2rem;
-    font-size: 1.2rem;
-  }
-  
+  background-color: #000;
+  padding: 4rem 1.5rem;
+  text-align: center;
+  color: #ccc;
+}
+
+.contact-section h2 {
+  color: #ffd700;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.contact-section p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+/* --- Formulario adaptado al nuevo diseño --- */
+.form-card1 {
+  background-image: linear-gradient(163deg, goldenrod 0%, goldenrod 100%);
+  border-radius: 20px;
+  transition: all 0.3s;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 10px;
+}
+
+.form-card1:hover {
+  box-shadow: 0px 0px 10px 1px rgba(100, 255, 218, 0.3);
+}
+
+.form-card2 {
+  background-color: #171717;
+  border-radius: 20px;
+  transition: all 0.2s;
+  padding: 2rem;
+}
+
+.form-card2:hover {
+  transform: scale(0.98);
+}
+
+/* --- Estilos del formulario interno --- */
+.formu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-inline: 1em;
+  padding-bottom: 0.4em;
+  width: 100%;
+}
+
+.form-field {
+  width: 100%;
+  border-radius: 10px;
+  padding: 0.6em 1em;
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  margin-bottom: 15px;
+}
+
+.input-field {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  color: goldenrod;
+  font-size: 1rem;
+  resize: none;
+}
+
+/* --- Botón de envío --- */
+.sendMessage-btn {
+  cursor: pointer;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: goldenrod;
+  font-weight: bold;
+  outline: 1px solid goldenrod;
+  transition: all ease-in-out 0.3s;
+  width: 100%;
+}
+
+.sendMessage-btn:hover {
+  background-color: goldenrod;
+  color: #000;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}

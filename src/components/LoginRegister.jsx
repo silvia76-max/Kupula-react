@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/LoginRegister.css"; 
+import GoldenButton from "./GoldenButton";
 
 const LoginRegister = () => {
   const [activeTab, setActiveTab] = useState("login");

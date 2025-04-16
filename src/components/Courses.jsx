@@ -12,12 +12,12 @@ import extensionImg from '../assets/images/unas-kupula27.jpg';
 
 const Courses = () => {
   return (
-    <div className="course-section">
+    <section id= "cursos" className="course-section">
       <h2 className="section-title">Nuestros Cursos</h2>
       <div className="course-list">
         <CourseCard
           title="Curso de Maquillaje Profesional"
-          description="Aprende técnicas modernas de maquillaje social y artístico."
+          description="Aprende técnicas de maquillaje artistico."
           image={maquillajeImg}
         />
         <CourseCard
@@ -46,7 +46,7 @@ const Courses = () => {
           image={extensionImg}
         />
       </div>
-    </div>
+    </section>
   );
 };
 
