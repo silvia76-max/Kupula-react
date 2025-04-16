@@ -4,16 +4,19 @@ import { AuthProvider } from "./context/AuthContext";
 import Header from "./components/Header.jsx";
 import HeroSection from "./components/HeroSection.jsx";
 import AboutSection from "./components/AboutSection.jsx";
-import CoursesSection from "./components/CoursesSection.jsx";
+import ErrorBoundary from "./components/ErrorBoundary";
+import Courses from "./components/Courses.jsx"
 import ContactSection from "./components/ContactSection.jsx";
 import Footer from "./components/Footer.jsx";
 import LoginRegister from "./components/LoginRegister.jsx";
-
 import Profile from "./pages/user/Profile.jsx";
 import Dashboard from "./pages/admin/Dashboard.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
-
+import ReviewCarousel from "./components/ReviewCarrousel.jsx";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./index.css"; 
+
 function App() {
   return (
     <AuthProvider>
@@ -22,19 +25,15 @@ function App() {
           <Header />
           <HeroSection />
           <AboutSection />
-          <CoursesSection />
+          <Courses />
           <ContactSection />
+          <section id="opiniones">
+            <h2 style={{ textAlign: "center", marginBottom: "1rem" }}>Opiniones de nuestros alumnos</h2>
+            <ErrorBoundary>
+             <ReviewCarousel />
+           </ErrorBoundary>
+          </section>
           <Footer />
-
-          <main className="main-content">
-            <h2 className="titulo-principal">
-              Bienvenida a Akademia La Kúpula
-            </h2>
-            <p>
-              Formación estética presencial y online con elegancia y
-              profesionalidad.
-            </p>
-          </main>
 
           <Routes>
             <Route path="/login" element={<LoginRegister />} />

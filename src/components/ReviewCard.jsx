@@ -12,19 +12,19 @@ const ReviewCard = ({ name, avatar, rating, comment, date }) => {
         />
         <div className="review-info">
           <h4>{name}</h4>
-          <p>{new Date(date).toLocaleDateString()}</p>
+          <p className="review-date">{new Date(date).toLocaleDateString()}</p>
         </div>
       </div>
 
       <div className="review-stars">
         {[...Array(5)].map((_, i) => (
-          <span key={i}>
+          <span key={i} className="star">
             {i < rating ? "⭐" : "☆"}
           </span>
         ))}
       </div>
 
-      <p className="review-comment">{comment}</p>
+      <p className="review-comment">“{comment}”</p>
     </div>
   );
 };
