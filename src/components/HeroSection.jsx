@@ -14,7 +14,8 @@ const HeroSection = () => {
         <p>
           Aprende de expertas en el sector. Cursos presenciales y online con estilo y calidad.
         </p>
-        <GoldenButton text="Ver Cursos" href="#cursos" />
+        <GoldenButton href="#cursos">Ver Cursos</GoldenButton>
+
       </div>
     </section>
   );

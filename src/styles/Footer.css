@@ -1,25 +1,31 @@
-/* Footer.css */
-
 .footer {
-    background-color: #000;
-    color: #FFD700; /* dorado */
-    text-align: center;
-    padding: 1.5rem 1rem;
-    margin-top: 3rem;
-  }
-  
-  .footer p {
-    margin-bottom: 0.5rem;
-  }
-  
-  .footer-links a {
-    margin: 0 0.5rem;
-    color: #FFD700;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-links a:hover {
-    color: #fff;
-  }
-  
+  background-color: #000;
+  color: #FFD700; /* dorado */
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+}
+
+.footer-logo {
+  margin-bottom: 1rem;
+}
+
+.footer-logo-img {
+  width: 100px; /* Ajusta el tamaño según necesites */
+  height: auto;
+}
+
+.footer p {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  margin: 0 1rem;
+  color: #FFD700;
+  font-size: 1.5rem; /* Tamaño de los iconos */
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
