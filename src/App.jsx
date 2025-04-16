@@ -7,8 +7,8 @@ import AboutSection from "./components/AboutSection.jsx";
 import CoursesSection from "./components/CoursesSection.jsx";
 import ContactSection from "./components/ContactSection.jsx";
 import Footer from "./components/Footer.jsx";
+import LoginRegister from "./components/LoginRegister";
 
-import Login from "./pages/user/Login.jsx"; 
 import Profile from "./pages/user/Profile.jsx";
 import Dashboard from "./pages/admin/Dashboard.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
@@ -38,7 +38,7 @@ function App() {
           </main>
 
           <Routes>
-            <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<LoginRegister />} />
             <Route
               path="/admin/dashboard"
               element={

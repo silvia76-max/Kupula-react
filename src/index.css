@@ -4,14 +4,14 @@
   --color-fondo: black;
   --color-texto: white;
   --color-dorado: gold;
-  --color-dorado-oscuro: #b8860b;
+  --color-dorado-oscuro: goldenrod;
   --color-borde: #ffd700;
 }
 
 body {
   background-color: var(--color-fondo);
   color: var(--color-texto);
-  font-family: Arial, sans-serif;
+  font-family:  "Winky Sans", sans-serif;
   margin: 0;
   padding: 0;
 }

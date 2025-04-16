@@ -2,17 +2,17 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/admin/Dashboard";
-import Login from "./pages/user/Login";
 import { AuthProvider } from "./context/AuthContext";
 import PrivateRoute from "./routes/PrivateRoute";
 import Profile from "./pages/user/Profile";
+import LoginRegister from "./components/LoginRegister";
 
 function App() {
   return (
     <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<LoginRegister />} />
           <Route
             path="/admin/dashboard"
             element={
