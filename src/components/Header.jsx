@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import logo from "../assets/images/vinilo-logo.png";
 import taniaImage from "../assets/images/fundadora.jpg";
-import { FaBars, FaUser, FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { HiMenu } from "react-icons/hi"; 
 import "../styles/Header.css";
 
 const Header = () => {
@@ -16,12 +16,11 @@ const Header = () => {
         <img src={logo} alt="Logo de Akademia" className="header-logo" />
         <div className="header-title">
           <h1>Akademia La Kúpula</h1>
-          <div className="header-icons">
-            <FaUser className="icon" title="Login" />
-            <FaWhatsapp className="icon" title="WhatsApp" />
-            <FaFacebook className="icon" title="Facebook" />
-            <FaInstagram className="icon" title="Instagram" />
-          </div>
+          <Link to="/login">
+            <button role="button" className="golden-button">
+              <span className="golden-text">Iniciar sesión</span>
+            </button>
+         </Link>
           <button className="menu-toggle" onClick={toggleMenu}>
           <FaBars />
         </button>

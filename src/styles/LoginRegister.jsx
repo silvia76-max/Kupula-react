@@ -1,0 +1,46 @@
+.login-register-container {
+    max-width: 400px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: #000;
+    color: #FFD700;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    font-family: "Winky Sans", sans-serif;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+  }
+  
+  .tabs button {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: #FFD700;
+    cursor: pointer;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease;
+  }
+  
+  .tabs button.active {
+    border-bottom: 2px solid #FFD700;
+    font-weight: bold;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .form input {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
+  
