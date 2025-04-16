@@ -7,19 +7,18 @@ import AboutSection from "./components/AboutSection.jsx";
 import CoursesSection from "./components/CoursesSection.jsx";
 import ContactSection from "./components/ContactSection.jsx";
 import Footer from "./components/Footer.jsx";
-import LoginRegister from "./components/LoginRegister";
+import LoginRegister from "./components/LoginRegister.jsx";
 
 import Profile from "./pages/user/Profile.jsx";
 import Dashboard from "./pages/admin/Dashboard.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 
 import "./index.css"; 
-
 function App() {
   return (
     <AuthProvider>
       <Router>
-        <div className="bg-negro min-h-screen">
+        <div className="app-container">
           <Header />
           <HeroSection />
           <AboutSection />
@@ -27,8 +26,8 @@ function App() {
           <ContactSection />
           <Footer />
 
-          <main className="p-8">
-            <h2 className="text-dorado text-3xl font-semibold mb-4">
+          <main className="main-content">
+            <h2 className="titulo-principal">
               Bienvenida a Akademia La Kúpula
             </h2>
             <p>
@@ -38,7 +37,7 @@ function App() {
           </main>
 
           <Routes>
-          <Route path="/login" element={<LoginRegister />} />
+            <Route path="/login" element={<LoginRegister />} />
             <Route
               path="/admin/dashboard"
               element={
