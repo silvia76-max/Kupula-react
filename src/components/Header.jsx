@@ -19,10 +19,10 @@ const Header = () => {
     <header className="header">
      <div className="header-top">
       <div className="header-left">
-        <button className="menu-toggle" onClick={toggleMenu}>
+        <img src={logo} alt="Logo de Akademia" className="header-logo" />
+         <button className="menu-toggle" onClick={toggleMenu}>
           <RxHamburgerMenu />
         </button>
-        <img src={logo} alt="Logo de Akademia" className="header-logo" />
       </div>
 
       <div className="header-title">

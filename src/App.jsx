@@ -34,7 +34,6 @@ function App() {
            </ErrorBoundary>
           </section>
           <Footer />
-
           <Routes>
             <Route path="/login" element={<LoginRegister />} />
             <Route

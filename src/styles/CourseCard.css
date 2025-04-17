@@ -1,45 +1,51 @@
-/* Estilos para CourseCard */
 .course-card {
-  background-color: #1a1a1a; /* Fondo oscuro */
-  color: #fff; /* Texto blanco */
-  border-radius: 12px; /* Bordes redondeados */
-  padding: 20px; /* Espaciado interno */
-  max-width: 350px; /* Máximo ancho */
-  margin: 16px; /* Margen entre tarjetas */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones para hover */
-  display: flex; /* Flexbox para control de los elementos */
-  flex-direction: column; /* Aseguramos que los elementos estén en columna */
-  height: 400px; /* Establecer altura fija */
-  justify-content: space-between; /* Asegura que el contenido se distribuya de manera uniforme */
+  background-color: #1a1a1a;
+  color:gold;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 350px;
+  margin: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 450px; /* Puedes ajustar según diseño */
 }
 
-.course-card:hover {
-  transform: translateY(-8px); /* Movimiento hacia arriba */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Aumento de sombra en hover */
+.card-header {
+  height: 180px;
 }
 
 .course-image {
-  width: 100%; /* Aseguramos que la imagen ocupe todo el ancho de la tarjeta */
-  height: 200px; /* Establecemos una altura fija para la imagen */
-  object-fit: cover; /* La imagen se recorta para no deformarse */
-  border-radius: 8px; /* Bordes redondeados en la imagen */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-body {
+  flex: 1; /* Esto expande el área del contenido para igualar altura entre cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 1rem;
 }
 
 .course-title {
-  font-size: 1.5rem; /* Tamaño del título */
-  font-weight: bold; /* Negrita */
-  color: #ffd700; /* Color dorado */
-  margin-bottom: 12px; /* Espaciado debajo del título */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color:#ffd700;
+  margin-bottom: 0.5rem;
 }
 
 .course-description {
-  font-size: 1rem; /* Tamaño del texto */
-  color: #ccc; /* Color gris claro */
-  margin-bottom: 16px; /* Espaciado debajo de la descripción */
+  font-size: 1rem;
+  color:#ffd700;
+  flex: 1;
 }
 
-.golden-button {
-  align-self: center; /* Aseguramos que el botón esté centrado */
-  margin-top: auto; /* Aseguramos que el botón quede al final */
+.card-footer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
 }
