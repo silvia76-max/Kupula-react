@@ -9,6 +9,11 @@
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
     font-family: "Winky Sans", sans-serif;
   }
+  .success-message {
+    color: #28a745; /* Verde */
+    margin: 10px 0;
+    text-align: center;
+  }
   
   .tabs {
     display: flex;

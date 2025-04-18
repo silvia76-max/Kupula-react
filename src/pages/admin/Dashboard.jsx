@@ -10,14 +10,13 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Panel de administrador</h1>
+    <div>
+      <h1>Panel de administrador</h1>
       <p>Bienvenida, {user?.name} (rol: {user?.role})</p>
 
-      <div className="mt-4">
+      <div>
         <button
           onClick={logout}
-          className="bg-red-500 text-white px-4 py-2 rounded"
         >
           Cerrar sesión
         </button>

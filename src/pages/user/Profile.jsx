@@ -19,7 +19,7 @@ const Profile = () => {
       }
 
       try {
-        const response = await fetch("http://localhost:5000/api/auth/profile", {
+        const response = await fetch("/api/auth/profile", {
           method: "GET",
           headers: {
             "Authorization": `Bearer ${token}`, // Incluir el token en los headers

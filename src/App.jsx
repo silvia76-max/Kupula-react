@@ -17,24 +17,30 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./index.css"; 
 
-function App() {
+export function App() { 
   return (
     <AuthProvider>
       <Router>
         <div className="app-container">
           <Header />
-          <HeroSection />
-          <AboutSection />
-          <Courses />
-          <ContactSection />
-          <section id="opiniones">
-            <h2 style={{ textAlign: "center", marginBottom: "1rem" }}>Opiniones de nuestros alumnos</h2>
-            <ErrorBoundary>
-             <ReviewCarousel />
-           </ErrorBoundary>
-          </section>
-          <Footer />
           <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <HeroSection />
+                  <AboutSection />
+                  <Courses />
+                  <ContactSection />
+                  <section id="opiniones">
+                    <h2 style={{ textAlign: "center", marginBottom: "1rem" }}>Opiniones de nuestros alumnos</h2>
+                    <ErrorBoundary>
+                      <ReviewCarousel />
+                    </ErrorBoundary>
+                  </section>
+                </>
+              }
+            />
             <Route path="/login" element={<LoginRegister />} />
             <Route
               path="/admin/dashboard"
@@ -53,10 +59,10 @@ function App() {
               }
             />
           </Routes>
+          <Footer />
         </div>
       </Router>
     </AuthProvider>
   );
 }
-
 export default App;

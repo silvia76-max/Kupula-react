@@ -9,7 +9,7 @@ const ContactSection = () => {
         ¿Tienes dudas o quieres apuntarte a uno de nuestros cursos?
         ¡Escríbenos sin compromiso!
       </p>
-      <div class="contact-wrapper">
+      <div className="contact-wrapper">
       <div className="contact-container">
         {/* Izquierda: Formulario con tus clases actuales */}
         <div className="form-card1">
