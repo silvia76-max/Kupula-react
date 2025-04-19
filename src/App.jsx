@@ -16,12 +16,15 @@ import ReviewCarousel from "./components/ReviewCarrousel.jsx";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./index.css"; 
+import PingTest from "./components/pingTest.jsx";
 
 export function App() { 
   return (
     <AuthProvider>
       <Router>
         <div className="app-container">
+        <PingTest />
+        </div>
           <Header />
           <Routes>
             <Route
@@ -60,7 +63,7 @@ export function App() {
             />
           </Routes>
           <Footer />
-        </div>
+    
       </Router>
     </AuthProvider>
   );
