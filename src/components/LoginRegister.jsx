@@ -8,7 +8,7 @@ const LoginRegister = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    username: ""
+    username: "",
   });
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
@@ -23,12 +23,13 @@ const LoginRegister = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
+  // Login Handler
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -42,9 +43,9 @@ const LoginRegister = () => {
         },
         body: JSON.stringify({
           email: formData.email,
-          password: formData.password
+          password: formData.password,
         }),
-        credentials: 'include' // Importante para cookies/sesiones
+        credentials: "include", // Para manejar cookies/sesiones
       });
 
       if (!response.ok) {
@@ -62,11 +63,12 @@ const LoginRegister = () => {
     }
   };
 
+  // Register Handler
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setErrorMessage("");
-    
+
     try {
       const response = await fetch("/api/auth/register", {
         method: "POST",
@@ -76,8 +78,8 @@ const LoginRegister = () => {
         body: JSON.stringify({
           username: formData.username,
           email: formData.email,
-          password: formData.password
-        })
+          password: formData.password,
+        }),
       });
 
       if (!response.ok) {
@@ -90,7 +92,7 @@ const LoginRegister = () => {
       setFormData({
         email: "",
         password: "",
-        username: ""
+        username: "",
       });
     } catch (error) {
       setErrorMessage(error.message || "Error al registrar usuario");
@@ -119,6 +121,7 @@ const LoginRegister = () => {
       {errorMessage && <p className="error-message">{errorMessage}</p>}
       {successMessage && <p className="success-message">{successMessage}</p>}
 
+      {/* Login Form */}
       {activeTab === "login" ? (
         <form className="form" onSubmit={handleLoginSubmit}>
           <h2>Inicia Sesión</h2>
@@ -138,14 +141,12 @@ const LoginRegister = () => {
             value={formData.password}
             onChange={handleInputChange}
           />
-          <GoldenButton 
-            type="submit" 
-            disabled={isLoading}
-          >
+          <GoldenButton type="submit" disabled={isLoading}>
             {isLoading ? "Cargando..." : "Entrar"}
           </GoldenButton>
         </form>
       ) : (
+        // Register Form
         <form className="form" onSubmit={handleRegisterSubmit}>
           <h2>Regístrate</h2>
           <input
@@ -172,10 +173,7 @@ const LoginRegister = () => {
             value={formData.password}
             onChange={handleInputChange}
           />
-          <GoldenButton 
-            type="submit" 
-            disabled={isLoading}
-          >
+          <GoldenButton type="submit" disabled={isLoading}>
             {isLoading ? "Cargando..." : "Crear cuenta"}
           </GoldenButton>
         </form>
