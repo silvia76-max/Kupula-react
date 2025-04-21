@@ -1,5 +1,6 @@
 import "../styles/ContactSection.css";
 import tiendaImg from "../assets/images/entrada-kupula.jpg";
+import ContactForm from "./ContactForm.jsx";
 
 const ContactSection = () => {
   return (
@@ -12,22 +13,7 @@ const ContactSection = () => {
       <div className="contact-wrapper">
       <div className="contact-container">
         {/* Izquierda: Formulario con tus clases actuales */}
-        <div className="form-card1">
-          <div className="form-card2">
-            <form className="formu">
-              <div className="form-field">
-                <input className="input-field" type="text" placeholder="Tu nombre" required />
-              </div>
-              <div className="form-field">
-                <input className="input-field" type="email" placeholder="Tu email" required />
-              </div>
-              <div className="form-field">
-                <textarea className="input-field" placeholder="Tu mensaje" rows="5" required />
-              </div>
-              <button type="submit" className="sendMessage-btn">Enviar mensaje</button>
-            </form>
-          </div>
-        </div>
+        <ContactForm />
 
         {/* Derecha: Imagen, comentario y mapa */}
         <div className="info-extra">
