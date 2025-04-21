@@ -57,13 +57,11 @@ const Header = () => {
             {/* Aquí cambiamos entre Login y Register */}
             {isRegister ? (
               <>
-                <h2>Registrar cuenta</h2>
                 <Register />
                 <p>¿Ya tienes una cuenta? <button onClick={handleSwitchToLogin}>Inicia sesión</button></p>
               </>
             ) : (
               <>
-                <h2>Iniciar sesión</h2>
                 <Login />
                 <p>¿No tienes cuenta? <button onClick={handleSwitchToRegister}>Regístrate</button></p>
               </>
