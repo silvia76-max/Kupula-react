@@ -5,26 +5,27 @@ import Header from "./components/Header.jsx";
 import HeroSection from "./components/HeroSection.jsx";
 import AboutSection from "./components/AboutSection.jsx";
 import ErrorBoundary from "./components/ErrorBoundary";
-import Courses from "./components/Courses.jsx"
+import Courses from "./components/Courses.jsx";
 import ContactSection from "./components/ContactSection.jsx";
 import Footer from "./components/Footer.jsx";
-import LoginRegister from "./components/LoginRegister.jsx";
+import Login from "./components/Login.jsx";
+import Register from "./components/Register.jsx";
 import Profile from "./pages/user/Profile.jsx";
 import Dashboard from "./pages/admin/Dashboard.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 import ReviewCarousel from "./components/ReviewCarrousel.jsx";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "./index.css"; 
 import PingTest from "./components/pingTest.jsx";
 
-export function App() { 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./index.css";
+
+export function App() {
   return (
     <AuthProvider>
       <Router>
         <div className="app-container">
-        <PingTest />
-        </div>
+          <PingTest />
           <Header />
           <Routes>
             <Route
@@ -36,7 +37,9 @@ export function App() {
                   <Courses />
                   <ContactSection />
                   <section id="opiniones">
-                    <h2 style={{ textAlign: "center", marginBottom: "1rem" }}>Opiniones de nuestros alumnos</h2>
+                    <h2 style={{ textAlign: "center", marginBottom: "1rem" }}>
+                      Opiniones de nuestros alumnos
+                    </h2>
                     <ErrorBoundary>
                       <ReviewCarousel />
                     </ErrorBoundary>
@@ -44,7 +47,8 @@ export function App() {
                 </>
               }
             />
-            <Route path="/login" element={<LoginRegister />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route
               path="/admin/dashboard"
               element={
@@ -63,9 +67,10 @@ export function App() {
             />
           </Routes>
           <Footer />
-    
+        </div>
       </Router>
     </AuthProvider>
   );
 }
+
 export default App;

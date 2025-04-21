@@ -1,43 +1,46 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 import logo from "../assets/images/vinilo-logo.png";
 import taniaImage from "../assets/images/fundadora.jpg";
-import "../styles/Header.css";
 import GoldenButton from "./GoldenButton";
-import LoginRegister from "./LoginRegister";
+import Login from "./Login"; 
+import Register from "./Register";  
 import "../styles/Modal.css";
+import "../styles/Header.css";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const [showLogin, setShowLogin] = useState(false);
-  
+  const [isRegister, setIsRegister] = useState(false);  // Estado para alternar entre Login y Register
+
+  const handleSwitchToRegister = () => setIsRegister(true);
+  const handleSwitchToLogin = () => setIsRegister(false);
+
   return (
     <header className="header">
-     <div className="header-top">
-      <div className="header-left">
-        <img src={logo} alt="Logo de Akademia" className="header-logo" />
-         <button className="menu-toggle" onClick={toggleMenu}>
-          <RxHamburgerMenu />
-        </button>
-      </div>
+      <div className="header-top">
+        <div className="header-left">
+          <img src={logo} alt="Logo de Akademia" className="header-logo" />
+          <button className="menu-toggle" onClick={toggleMenu}>
+            <RxHamburgerMenu />
+          </button>
+        </div>
 
-      <div className="header-title">
-        <h1>Akademia La Kúpula</h1>
-        <GoldenButton onClick={() => setShowLogin(true)}>
+        <div className="header-title">
+          <h1>Akademia La Kúpula</h1>
+          <GoldenButton onClick={() => setShowLogin(true)}>
             Iniciar sesión
           </GoldenButton>
+        </div>
 
+        <div className="header-right">
+          <img src={taniaImage} alt="Tania Calvo" className="header-tania" />
+        </div>
       </div>
 
-      <div className="header-right">
-        <img src={taniaImage} alt="Tania Calvo" className="header-tania" />
-      </div>
-    </div>
-    
       {isMenuOpen && (
         <nav className="nav-menu">
           <a href="#inicio">Inicio</a>
@@ -46,11 +49,25 @@ const Header = () => {
         </nav>
       )}
 
-       {showLogin && (
+      {showLogin && (
         <div className="modal-overlay" onClick={() => setShowLogin(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="close-button" onClick={() => setShowLogin(false)}>✖</button>
-            <LoginRegister />
+
+            {/* Aquí cambiamos entre Login y Register */}
+            {isRegister ? (
+              <>
+                <h2>Registrar cuenta</h2>
+                <Register />
+                <p>¿Ya tienes una cuenta? <button onClick={handleSwitchToLogin}>Inicia sesión</button></p>
+              </>
+            ) : (
+              <>
+                <h2>Iniciar sesión</h2>
+                <Login />
+                <p>¿No tienes cuenta? <button onClick={handleSwitchToRegister}>Regístrate</button></p>
+              </>
+            )}
           </div>
         </div>
       )}
@@ -59,5 +76,3 @@ const Header = () => {
 };
 
 export default Header;
-
-

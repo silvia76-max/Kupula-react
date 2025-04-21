@@ -8,8 +8,7 @@ function PingTest() {
     fetch("http://localhost:5000/api/test/ping")
       .then((res) => res.json())
       .then((data) => setMessage(data.message))
-      // eslint-disable-next-line no-unused-vars
-      .catch((err) => setMessage("Error al conectar con Flask 😢"));
+      .catch(() => setMessage("Error al conectar con Flask  😢"));
   }, []);
 
   return (
