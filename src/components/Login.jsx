@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import GoldenButton from "./GoldenButton";
+import { loginUser } from "../api"; // 👈 Importa desde api.jsx
 import "../styles/LoginRegister.css";
 
 const Login = () => {
-  const [formData, setFormData] = useState({username: "", email: "", password: "" });
+  const [formData, setFormData] = useState({username: "",email: "", password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -20,19 +21,7 @@ const Login = () => {
     setError("");
 
     try {
-      const response = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: 'include',
-        body: JSON.stringify(formData)
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Credenciales incorrectas");
-      }
-
-      const data = await response.json();
+      const data = await loginUser(formData);
       localStorage.setItem("token", data.access_token);
       navigate("/profile");
     } catch (err) {
@@ -46,10 +35,12 @@ const Login = () => {
     <form className="form" onSubmit={handleSubmit}>
       <h2>Inicia sesión</h2>
       {error && <p className="error-message">{error}</p>}
-      <input name="username" placeholder="Nombre completo" type="username" onChange={handleChange} value={formData.username} required />
+      <input name="name" placeholder="Nombre completo" type="name" onChange={handleChange} value={formData.name} required />
       <input name="email" placeholder="Correo electrónico" type="email" onChange={handleChange} value={formData.email} required />
       <input name="password" placeholder="Contraseña" type="password" onChange={handleChange} value={formData.password} required />
-      <GoldenButton type="submit" disabled={loading}>{loading ? "Cargando..." : "Entrar"}</GoldenButton>
+      <GoldenButton type="submit" disabled={loading || !formData.email || !formData.password}>
+        {loading ? "Cargando..." : "Entrar"}
+      </GoldenButton>
     </form>
   );
 };

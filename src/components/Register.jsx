@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import GoldenButton from "./GoldenButton";
+import { registerUser } from "../api"; // 👈 Importa desde api.jsx
 import "../styles/LoginRegister.css";
 
 const Register = () => {
@@ -20,17 +21,8 @@ const Register = () => {
     setError("");
 
     try {
-      const response = await fetch("/api/auth/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Error en el registro");
-      }
-      navigate("/login"); // Redirigir a login tras registro exitoso
+      await registerUser(formData);
+      navigate("/login");
     } catch (err) {
       setError(err.message);
     } finally {
@@ -45,7 +37,9 @@ const Register = () => {
       <input name="username" placeholder="Nombre completo" onChange={handleChange} value={formData.username} required />
       <input name="email" placeholder="Correo electrónico" type="email" onChange={handleChange} value={formData.email} required />
       <input name="password" placeholder="Contraseña" type="password" onChange={handleChange} value={formData.password} required />
-      <GoldenButton type="submit" disabled={loading}>{loading ? "Cargando..." : "Crear cuenta"}</GoldenButton>
+      <GoldenButton type="submit" disabled={loading || !formData.username || !formData.email || !formData.password}>
+        {loading ? "Cargando..." : "Crear cuenta"}
+      </GoldenButton>
     </form>
   );
 };
