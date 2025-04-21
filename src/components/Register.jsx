@@ -30,7 +30,6 @@ const Register = () => {
         const errorData = await response.json();
         throw new Error(errorData.message || "Error en el registro");
       }
-
       navigate("/login"); // Redirigir a login tras registro exitoso
     } catch (err) {
       setError(err.message);
