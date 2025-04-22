@@ -15,7 +15,7 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/auth': {  // Añade esta sección para las rutas de autenticación
+      '/api': { 
         target: 'http://localhost:5000',
         changeOrigin: true,
         secure: false,

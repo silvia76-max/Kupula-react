@@ -1,21 +1,29 @@
-// src/api.js
 export const registerUser = async (formData) => {
-    const res = await fetch("/api/auth/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData)
+  try {
+    const response = await fetch("http://localhost:5000/api/auth/register", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+      credentials: 'include'
     });
-  
-    if (!res.ok) {
-      const err = await res.json();
-      throw new Error(err.message || "Error en el registro");
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || "Error en el registro");
     }
-  
-    return res.json();
-  };
+
+    return data;
+  } catch (error) {
+    console.error('Error en registerUser:', error);
+    throw error;
+  }
+};
   
   export const loginUser = async (formData) => {
-    const res = await fetch("/api/auth/login", {
+    const res = await fetch("http://localhost:5000/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-
 import logo from "../assets/images/vinilo-logo.png";
 import taniaImage from "../assets/images/fundadora.jpg";
 import GoldenButton from "./GoldenButton";
