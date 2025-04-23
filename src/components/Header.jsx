@@ -5,6 +5,7 @@ import taniaImage from "../assets/images/fundadora.jpg";
 import GoldenButton from "./GoldenButton";
 import Login from "./Login"; 
 import Register from "./Register";  
+import LogoutButton from "./LogoutButton";
 import "../styles/Modal.css";
 import "../styles/Header.css";
 

@@ -1,89 +1,87 @@
-import React, { useState } from "react";
+// src/components/Register.jsx
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import GoldenButton from "./GoldenButton";
-import { registerUser } from "../api";
-import "../styles/LoginRegister.css";
+import "../styles/Register.css";
+import GoldenButton from "./GoldenButton.jsx";  
 
 const Register = () => {
-  const [formData, setFormData] = useState({ 
-    username: "", 
-    email: "", 
-    password: "", 
-    role: "user" 
-  });
+  const [form, setForm] = useState({ username: "", email: "", password: "" });
+  const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
-  
-    try {
-      console.log("Enviando datos:", formData);
-      const response = await registerUser(formData);
-      
-      if (response && response.message) {
-        console.log("Registro exitoso:", response.message);
-        navigate("/login");
-      }
-    } catch (err) {
-      console.error("Error en registro:", err);
-      setError(err.message || "Error al registrar el usuario");
-    } finally {
-      setLoading(false);
+ 
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setSuccess("");
+  setError("");
+
+  try {
+    const res = await fetch("http://localhost:5000/api/auth/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+
+    const contentType = res.headers.get("content-type");
+    let data = {};
+    
+    if (contentType && contentType.includes("application/json")) {
+      data = await res.json();
     }
-  };
 
+    if (res.ok) {
+      // Mensaje de éxito
+      setSuccess("¡Registro exitoso! Redirigiendo al login...");
+      
+      // Redirigir después de un breve retraso
+      setTimeout(() => {
+        // Usamos navigate para redirigir al login
+        navigate(data.redirect_url || "/login");
+      }, 1500);
+    } else {
+      // Mostrar error si no es ok
+      setError(data.message || "Ocurrió un error al registrar.");
+    }
+  } catch (error) {
+    setError("Error en la solicitud, intente nuevamente.");
+    console.error("Error al registrar:", error);
+  }
+};
   return (
-    <form className="form" onSubmit={handleSubmit} noValidate>
-      <h2>Regístrate</h2>
-      {error && <p className="error-message">{error}</p>}
-      
-      <input 
-        name="username" 
-        placeholder="Nombre completo" 
-        type="text" 
-        onChange={handleChange} 
-        value={formData.username} 
-        required 
-      />
-      
-      <input 
-        name="email" 
-        placeholder="Correo electrónico" 
-        type="email" 
-        onChange={handleChange} 
-        value={formData.email} 
-        required 
-      />
-      
-      <input 
-        name="password" 
-        placeholder="Contraseña" 
-        type="password" 
-        onChange={handleChange} 
-        value={formData.password} 
-        required 
-        minLength="8"
-      />
-      
-      <GoldenButton 
-        type="submit" 
-        disabled={loading || !formData.username || !formData.email || !formData.password}
-      >
-        {loading ? "Cargando..." : "Crear cuenta"}
-      </GoldenButton>
-    </form>
+    <div className="login-register-container">
+      <h2 style={{ textAlign: "center" }}>Registro</h2>
+      {success && <p className="success-message">{success}</p>}
+      {error && <p className="success-message" style={{ color: "red" }}>{error}</p>}
+      <form className="form" onSubmit={handleSubmit}>
+        <input
+          name="username"
+          type="text"
+          placeholder="Nombre de usuario"
+          onChange={handleChange}
+          required
+        />
+        <input
+          name="email"
+          type="email"
+          placeholder="Correo electrónico"
+          onChange={handleChange}
+          required
+        />
+        <input
+          name="password"
+          type="password"
+          placeholder="Contraseña"
+          onChange={handleChange}
+          required
+        />
+        <button type="submit" className="golden-button">Registrarse</button>
+      </form>
+    </div>
   );
 };
 

@@ -1,47 +1,18 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import GoldenButton from "./GoldenButton";
-import { loginUser } from "../api"; // 👈 Importa desde api.jsx
-import "../styles/LoginRegister.css";
+// src/components/Login.jsx
+import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
+import "../styles/Register.css";
 
 const Login = () => {
-  const [formData, setFormData] = useState({username: "",email: "", password: "" });
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
-
-    try {
-      const data = await loginUser(formData);
-      localStorage.setItem("token", data.access_token);
-      navigate("/profile");
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const { loginWithRedirect } = useAuth0();
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
+    <div className="login-register-container">
       <h2>Inicia sesión</h2>
-      {error && <p className="error-message">{error}</p>}
-      <input name="name" placeholder="Nombre completo" type="name" onChange={handleChange} value={formData.name} required />
-      <input name="email" placeholder="Correo electrónico" type="email" onChange={handleChange} value={formData.email} required />
-      <input name="password" placeholder="Contraseña" type="password" onChange={handleChange} value={formData.password} required />
-      <GoldenButton type="submit" disabled={loading || !formData.email || !formData.password}>
-        {loading ? "Cargando..." : "Entrar"}
-      </GoldenButton>
-    </form>
+      <button className="golden-button" onClick={() => loginWithRedirect()}>
+        Continuar con Auth0
+      </button>
+    </div>
   );
 };
 

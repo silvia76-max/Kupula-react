@@ -2,17 +2,22 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/admin/Dashboard";
-import { AuthProvider } from "./context/AuthContext";
+import { Auth0Provider } from '@auth0/auth0-react';
 import PrivateRoute from "./routes/PrivateRoute";
 import Profile from "./pages/user/Profile";
-import LoginRegister from "./components/LoginRegister";
+import Register from "./components/Register";
+import Login from "./components/Login";
+import LogoutButton from "./components/LogoutButton";
 
 function App() {
   return (
-    <AuthProvider>
+    <Auth0Provider>
+      <AuthRedirect />
       <Router>
         <Routes>
-        <Route path="/login" element={<LoginRegister />} />
+        <Route path="/Register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <LogoutButton />
           <Route
             path="/admin/dashboard"
             element={
@@ -31,7 +36,7 @@ function App() {
           />
         </Routes>
       </Router>
-    </AuthProvider>
+    </Auth0Provider>
   );
 }
 
