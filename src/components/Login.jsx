@@ -1,25 +1,32 @@
-// src/components/Login.jsx
 import React, { useEffect } from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
-import "../styles/Register.css";
 
-const Home = () => {
+const Login = () => {
   const { loginWithRedirect, user, isAuthenticated, logout } = useAuth0();
 
   useEffect(() => {
     if (isAuthenticated) {
       console.log("Usuario autenticado:", user);
+      // Aquí podrías enviar los datos a tu backend si es necesario
     }
   }, [isAuthenticated, user]);
 
   return (
-    <div>
+    <div className="auth-container">
       {!isAuthenticated ? (
-        <button onClick={() => loginWithRedirect()}>Login</button>
+        <button 
+          onClick={() => loginWithRedirect({ authorizationParams: { prompt: "login" } })}
+          className="auth-button"
+        >
+          Login
+        </button>
       ) : (
-        <div>
-          <h2>Bienvenido, {user.name}</h2>
-          <button onClick={() => logout({ returnTo: window.location.origin })}>
+        <div className="welcome-container">
+          <h2>Bienvenido, {user?.name || user?.email}</h2>
+          <button 
+            onClick={() => logout({ returnTo: window.location.origin })}
+            className="auth-button"
+          >
             Logout
           </button>
         </div>
@@ -28,4 +35,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Login;

@@ -8,8 +8,28 @@ import "../styles/Header.css";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // eslint-disable-next-line no-unused-vars
+  const { loginWithRedirect, isAuthenticated, user, logout } = useAuth0();
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const { loginWithRedirect } = useAuth0();
+
+  const handleAuthAction = () => {
+    if (isAuthenticated) {
+      // Redirige al perfil o cierra sesión
+      // Opción 1: Redirigir a página de perfil
+      // window.location.href = '/perfil';
+      
+      // Opción 2: Cerrar sesión
+      logout({ returnTo: window.location.origin });
+    } else {
+      // Redirige al registro
+      loginWithRedirect({
+        authorizationParams: {
+          screen_hint: 'signup'
+        }
+      });
+    }
+  };
 
   return (
     <header className="header">
@@ -23,9 +43,21 @@ const Header = () => {
 
         <div className="header-title">
           <h1>Akademia La Kúpula</h1>
-          {/* Botón que redirige directamente al signup de Auth0 */}
-          <GoldenButton onClick={() => loginWithRedirect({ authorizationParams: { screen_hint: 'signup' } })}>
-            Regístrate
+          <GoldenButton onClick={handleAuthAction}>
+            {isAuthenticated ? (
+              <>
+                {/* Opción 1: Mostrar nombre y "Mi Perfil" */}
+                {/* `Hola, ${user?.given_name || user?.nickname || 'Usuario'}` */}
+                
+                {/* Opción 2: Simplemente "Mi Perfil" */}
+                'Mi Perfil'
+                
+                {/* Opción 3: "Cerrar Sesión" */}
+                {/* 'Cerrar Sesión' */}
+              </>
+            ) : (
+              'Regístrate'
+            )}
           </GoldenButton>
         </div>
 
@@ -39,6 +71,9 @@ const Header = () => {
           <a href="#inicio">Inicio</a>
           <a href="#cursos">Cursos</a>
           <a href="#contacto">Contacto</a>
+          {isAuthenticated && (
+            <a href="#perfil">Mi Perfil</a>
+          )}
         </nav>
       )}
     </header>
