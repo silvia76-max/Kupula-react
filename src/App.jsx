@@ -36,7 +36,6 @@ export function App() {
                 <HeroSection />
                 <AboutSection />
                 <Courses />
-                <ContactForm />
                 <ContactSection />
                 <section id="opiniones">
                   <h2 style={{ textAlign: "center", marginBottom: "1rem" }}>

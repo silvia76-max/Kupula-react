@@ -2,10 +2,10 @@
 /* Variables globales */
 :root {
   --color-fondo: black;
-  --color-texto: rgb(245, 239, 130);
-  --color-dorado: gold;
-  --color-dorado-oscuro: goldenrod;
-  --color-borde: #ffd700;
+  --color-texto: #fff200;
+  --color-dorado: #ffd700;
+  --color-dorado-oscuro: #daa520;
+  --color-borde: #feee93;
 }
 
 body {

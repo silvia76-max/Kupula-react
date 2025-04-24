@@ -3,21 +3,13 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import logo from "../assets/images/vinilo-logo.png";
 import taniaImage from "../assets/images/fundadora.jpg";
 import GoldenButton from "./GoldenButton";
-import Login from "./Login"; 
-import Register from "./Register";  
-import LogoutButton from "./LogoutButton";
-import "../styles/Modal.css";
+import { useAuth0 } from "@auth0/auth0-react";
 import "../styles/Header.css";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-  const [showLogin, setShowLogin] = useState(false);
-  const [isRegister, setIsRegister] = useState(false);  // Estado para alternar entre Login y Register
-
-  const handleSwitchToRegister = () => setIsRegister(true);
-  const handleSwitchToLogin = () => setIsRegister(false);
+  const { loginWithRedirect } = useAuth0();
 
   return (
     <header className="header">
@@ -31,8 +23,9 @@ const Header = () => {
 
         <div className="header-title">
           <h1>Akademia La Kúpula</h1>
-          <GoldenButton onClick={() => setShowLogin(true)}>
-            Iniciar sesión
+          {/* Botón que redirige directamente al signup de Auth0 */}
+          <GoldenButton onClick={() => loginWithRedirect({ authorizationParams: { screen_hint: 'signup' } })}>
+            Regístrate
           </GoldenButton>
         </div>
 
@@ -47,27 +40,6 @@ const Header = () => {
           <a href="#cursos">Cursos</a>
           <a href="#contacto">Contacto</a>
         </nav>
-      )}
-
-      {showLogin && (
-        <div className="modal-overlay" onClick={() => setShowLogin(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-button" onClick={() => setShowLogin(false)}>✖</button>
-
-            {/* Aquí cambiamos entre Login y Register */}
-            {isRegister ? (
-              <>
-                <Register />
-                <p>¿Ya tienes una cuenta? <button onClick={handleSwitchToLogin}>Inicia sesión</button></p>
-              </>
-            ) : (
-              <>
-                <Login />
-                <p>¿No tienes cuenta? <button onClick={handleSwitchToRegister}>Regístrate</button></p>
-              </>
-            )}
-          </div>
-        </div>
       )}
     </header>
   );
