@@ -1,10 +1,19 @@
 import React from 'react';
-import "../styles/AvisoLegal.css";
+import "../styles/TextosLegales.css";
+import { Helmet } from "react-helmet";
 
 
 const CookiesPolicy = () => {
   return (
     <div className="legal-container">
+       <Helmet>
+         <title>Política de Cookies - Akademia La Kúpula</title>
+          <meta name="description" content="Política de Cookies de AkademiaLaKupula.com" />
+      </Helmet>
+      <div className="legal-container">
+      <button className="close-button" onClick={() => window.history.back()}>
+        X
+      </button>
       <div className="legal-content">
         <h1>Política de Cookies</h1>
         <p className="website">AkademiaLaKupula.com</p>
@@ -89,6 +98,7 @@ const CookiesPolicy = () => {
           cookies web gratis online el día 26/04/2025.
         </p>
       </div>
+    </div>
     </div>
   );
 };

@@ -16,6 +16,10 @@ import PrivateRoute from "./routes/PrivateRoute.jsx";
 import ReviewCarousel from "./components/ReviewCarrousel.jsx";
 import PingTest from "./components/pingTest.jsx";
 import AuthRedirect from "./components/AuthRedirect.jsx";
+import PoliticaPrivacidad from "./components/PoliticaPrivacidad";
+import AvisoLegal from "./components/AvisoLegal";
+import CookiesPolicy from "./components/CookiesPolicy";
+import CondicionesDeCompra from "./components/CondicionesDeCompra";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -47,6 +51,10 @@ export function App() {
               </>
             }
           />
+          <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
+          <Route path="/aviso-legal" element={<AvisoLegal />} />
+          <Route path="/cookies" element={<CookiesPolicy />} />
+          <Route path="/condiciones-de-compra" element={<CondicionesDeCompra />} />
           <Route path="/callback" element={<AuthRedirect />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

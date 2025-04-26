@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { FaFacebook, FaInstagram, FaWhatsapp, FaEnvelope, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -9,6 +10,11 @@ const Footer = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Función para detener la propagación del evento
+  const stopPropagation = (e) => {
+    e.stopPropagation();
   };
 
   return (
@@ -33,10 +39,38 @@ const Footer = () => {
         
         {isMenuOpen && (
           <ul className="footer-menu-list">
-            <li><Link to="/politica-privacidad">Política de Privacidad</Link></li>
-            <li><Link to="/aviso-legal">Aviso Legal</Link></li>
-            <li><Link to="/cookies">Política de Cookies</Link></li>
-            <li><Link to="/condiciones-de-compra">Condiciones de Compra</Link></li>
+            <li>
+              <Link 
+                to="/politica-privacidad" 
+                onClick={stopPropagation} // Detener propagación
+              >
+                Política de Privacidad
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/aviso-legal" 
+                onClick={stopPropagation} // Detener propagación
+              >
+                Aviso Legal
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/cookies" 
+                onClick={stopPropagation} // Detener propagación
+              >
+                Política de Cookies
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/condiciones-de-compra" 
+                onClick={stopPropagation} // Detener propagación
+              >
+                Condiciones de Compra
+              </Link>
+            </li>
           </ul>
         )}
       </div>

@@ -1,15 +1,20 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import "../styles/AvisoLegal.css";
+import "../styles/TextosLegales.css";
 
 
-const PrivacyPolicy = () => {
+const PoliticaPrivacidad = () => {
   return (
     <div className="legal-container">
       <Helmet>
         <title>Política de Privacidad - Akademia La Kúpula</title>
         <meta name="description" content="Política de privacidad y protección de datos de AkademiaLaKupula.com" />
       </Helmet>
+      <div className="legal-container">
+      {/* Botón de Cierre */}
+      <button className="close-button" onClick={() => window.history.back()}>
+        X
+      </button>
 
       <article className="legal-content">
         <h1>POLÍTICA DE PRIVACIDAD DEL SITIO WEB</h1>
@@ -184,7 +189,8 @@ const PrivacyPolicy = () => {
         </section>
       </article>
     </div>
+    </div>
   );
 };
 
-export default PrivacyPolicy;
+export default PoliticaPrivacidad;

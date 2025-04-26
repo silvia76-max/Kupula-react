@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MainLayout from "./components/MainLayout"; // Importa el MainLayout
 import Dashboard from "./pages/admin/Dashboard";
 import Profile from "./pages/user/Profile";
 import Register from "./components/Register";

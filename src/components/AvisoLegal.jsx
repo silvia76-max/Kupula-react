@@ -1,16 +1,21 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import "../styles/AvisoLegal.css";
+import "../styles/TextosLegales.css";
 
 
 
-const LegalNotice = () => {
+const AvisoLegal = () => {
   return (
     <div className="legal-container">
       <Helmet>
         <title>Aviso Legal - Akademia La Kúpula</title>
         <meta name="description" content="Aviso legal y condiciones generales de uso de AkademiaLaKupula.com" />
       </Helmet>
+      <div className="legal-container">
+      {/* Botón de Cierre */}
+      <button className="close-button" onClick={() => window.history.back()}>
+        X
+      </button>
 
       <article className="legal-content">
         <h1>AVISO LEGAL Y CONDICIONES GENERALES DE USO</h1>
@@ -240,7 +245,8 @@ const LegalNotice = () => {
         </section>
       </article>
     </div>
+    </div>
   );
 };
 
-export default LegalNotice;
+export default AvisoLegal;
