@@ -1,15 +1,16 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from "react";
 import "../styles/TextosLegales.css";
 
-
 const PoliticaPrivacidad = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, []);
   return (
     <div className="legal-container">
-      <Helmet>
+     
         <title>Política de Privacidad - Akademia La Kúpula</title>
         <meta name="description" content="Política de privacidad y protección de datos de AkademiaLaKupula.com" />
-      </Helmet>
+
       <div className="legal-container">
       {/* Botón de Cierre */}
       <button className="close-button" onClick={() => window.history.back()}>

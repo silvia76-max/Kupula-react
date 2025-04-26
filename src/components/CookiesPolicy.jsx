@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import "../styles/TextosLegales.css";
-import { Helmet } from "react-helmet";
 
 
 const CookiesPolicy = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, []);
   return (
     <div className="legal-container">
-       <Helmet>
-         <title>Política de Cookies - Akademia La Kúpula</title>
-          <meta name="description" content="Política de Cookies de AkademiaLaKupula.com" />
-      </Helmet>
+       <title>Política de Cookies - Akademia La Kúpula</title>
+        <meta name="description" content="Política de Cookies de AkademiaLaKupula.com" />
       <div className="legal-container">
       <button className="close-button" onClick={() => window.history.back()}>
         X

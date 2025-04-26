@@ -1,14 +1,17 @@
-import { Helmet } from "react-helmet";
-import React from "react";
+
+import React, { useEffect } from "react";
 import "../styles/TextosLegales.css";
 
+
 const CondicionesDeCompra = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Desplaza la página al inicio
+  }, []);
   return (
     <div className="legal-container">
-      <Helmet>
+  
       <title>ACondiciones de- Akademia La Kúpula</title>
       <meta name="description" content="Condiciones generales de compra de AkademiaLaKupula.com" />
-      </Helmet>
         <div className="legal-container">
       {/* Botón de Cierre */}
       <button className="close-button" onClick={() => window.history.back()}>

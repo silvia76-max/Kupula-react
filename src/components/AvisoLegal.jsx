@@ -1,16 +1,16 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from "react";
 import "../styles/TextosLegales.css";
 
-
-
 const AvisoLegal = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Desplaza la página al inicio
+  }, []);
   return (
     <div className="legal-container">
-      <Helmet>
+    
         <title>Aviso Legal - Akademia La Kúpula</title>
         <meta name="description" content="Aviso legal y condiciones generales de uso de AkademiaLaKupula.com" />
-      </Helmet>
+
       <div className="legal-container">
       {/* Botón de Cierre */}
       <button className="close-button" onClick={() => window.history.back()}>

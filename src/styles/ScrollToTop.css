@@ -1,0 +1,8 @@
+/* styles/GlobalStyles.css */
+html {
+    scroll-behavior: smooth; /* Hace que el scroll sea suave */
+  }
+  
+  body {
+    overflow-anchor: none; /* Evita que el navegador establezca un ancla de scroll */
+  }

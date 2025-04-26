@@ -7,11 +7,12 @@ import PoliticaPrivacidad from "./components/PoliticaPrivacidad";
 import AvisoLegal from "./components/AvisoLegal";
 import CookiesPolicy from "./components/CookiesPolicy";
 import CondicionesDeCompra from "./components/CondicionesDeCompra";
-
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
+        <ScrollToTop />
       <Routes>
         <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
         <Route path="/aviso-legal" element={<AvisoLegal />} />

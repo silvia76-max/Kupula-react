@@ -21,6 +21,7 @@ import AvisoLegal from "./components/AvisoLegal";
 import CookiesPolicy from "./components/CookiesPolicy";
 import CondicionesDeCompra from "./components/CondicionesDeCompra";
 
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./index.css";
