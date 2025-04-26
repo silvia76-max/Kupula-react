@@ -17,6 +17,23 @@
   height: auto;
   margin-bottom: 1rem;
 }
+.social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-icon {
+  text-decoration: none;
+  color:var(--color-texto);
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color:var(--color-dorado-oscuro);
+}
 
 .footer-menu {
   margin-top: 1rem;

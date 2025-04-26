@@ -1,7 +1,7 @@
 import "../styles/ContactSection.css";
 import tiendaImg from "../assets/images/entrada-kupula.jpg";
 import ContactForm from "./ContactForm.jsx";
-
+import { FaFacebook, FaInstagram, FaWhatsapp, FaEnvelope, FaChevronDown } from "react-icons/fa";
 const ContactSection = () => {
   return (
     <section id="contacto" className="contact-section">
@@ -37,20 +37,51 @@ const ContactSection = () => {
       </div>
 
       {/* Redes sociales */}
-      <div className="social-icons">
-        <a href="https://wa.me/tu-numero" target="_blank" rel="noreferrer">
-          <i className="fab fa-whatsapp"></i>
+      <nav className="social-icons" aria-label="Redes sociales">
+        <a 
+          href="https://www.tiktok.com/taniadelacupula" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="TikTok"
+          className="social-icon"
+        >
+          <FaTiktok aria-hidden="true" />
         </a>
-        <a href="mailto:tuemail@correo.com">
-          <i className="fas fa-envelope"></i>
+        <a 
+          href="https://www.facebook.com/tania.laCupula" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="Facebook"
+          className="social-icon"
+        >
+          <FaFacebook aria-hidden="true" />
         </a>
-        <a href="https://facebook.com/tu-pagina" target="_blank" rel="noreferrer">
-          <i className="fab fa-facebook-f"></i>
+        <a 
+          href="https://www.instagram.com/taniadelacupula" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="Instagram"
+          className="social-icon"
+        >
+          <FaInstagram aria-hidden="true" />
         </a>
-        <a href="https://instagram.com/tu-perfil" target="_blank" rel="noreferrer">
-          <i className="fab fa-instagram"></i>
+        <a 
+          href="https://wa.me/+34620576646" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="WhatsApp"
+          className="social-icon"
+        >
+          <FaWhatsapp aria-hidden="true" />
         </a>
-      </div>
+        <a 
+          href="mailto:institutodebellezataniacalvo@gmail.com" 
+          aria-label="Email"
+          className="social-icon"
+        >
+          <FaEnvelope aria-hidden="true" />
+        </a>
+      </nav>
       </div>
     </section>
   );
