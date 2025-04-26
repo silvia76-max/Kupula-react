@@ -1,29 +1,62 @@
-import React from "react";
-import { FaFacebook, FaInstagram, FaWhatsapp, FaEnvelope } from "react-icons/fa";
-import logo from "../assets/images/img-logo.svg";  
+import React, { useState } from "react";
+import { FaFacebook, FaInstagram, FaWhatsapp, FaEnvelope, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import logo from "../assets/images/img-logo.svg";
 import "../styles/Footer.css";
 
 const Footer = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <footer className="footer">
       <div className="footer-logo">
-        <img src={logo} alt="Akademia La Kúpula" className="footer-logo-img" />
+        <img 
+          src={logo} 
+          alt="Akademia La Kúpula" 
+          className="footer-logo-img" 
+          onError={(e) => {
+            e.target.style.display = "none";
+          }}
+        />
       </div>
-      <p>&copy; {new Date().getFullYear()} Akademia La Kúpula. Todos los derechos reservados.</p>
+
+      {/* Menú desplegable */}
+      <div className="footer-legal-menu">
+        <button onClick={toggleMenu} className="footer-legal-toggle">
+          <span>Textos Legales</span>
+          {isMenuOpen ? <FaChevronUp /> : <FaChevronDown />}
+        </button>
+        
+        {isMenuOpen && (
+          <ul className="footer-menu-list">
+            <li><Link to="/politica-privacidad">Política de Privacidad</Link></li>
+            <li><Link to="/aviso-legal">Aviso Legal</Link></li>
+            <li><Link to="/cookies">Política de Cookies</Link></li>
+            <li><Link to="/condiciones-de-compra">Condiciones de Compra</Link></li>
+          </ul>
+        )}
+      </div>
+
       <div className="footer-links">
-        <a href="#" aria-label="Facebook">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <FaFacebook />
         </a>
-        <a href="#" aria-label="Instagram">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
           <FaInstagram />
         </a>
-        <a href="#" aria-label="WhatsApp">
+        <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
           <FaWhatsapp />
         </a>
         <a href="mailto:info@akademialakúpula.com" aria-label="Email">
           <FaEnvelope />
         </a>
       </div>
+
+      <p>&copy; {new Date().getFullYear()} Akademia La Kúpula. Todos los derechos reservados.</p>
     </footer>
   );
 };

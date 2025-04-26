@@ -6,7 +6,6 @@ import AboutSection from "./components/AboutSection.jsx";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Courses from "./components/Courses.jsx";
 import ContactSection from "./components/ContactSection.jsx";
-import ContactForm from "./components/ContactForm.jsx";
 import Footer from "./components/Footer.jsx";
 import Login from "./components/Login.jsx";
 import LogoutButton from "./components/LogoutButton.jsx";
