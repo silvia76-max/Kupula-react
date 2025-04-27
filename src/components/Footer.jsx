@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
-import { FaFacebook, FaInstagram, FaWhatsapp, FaEnvelope, FaChevronDown } from "react-icons/fa";
+import { SiTiktok } from "react-icons/si"
+import { FaFacebook, FaInstagram, FaWhatsapp, FaEnvelope, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import logo from "../assets/images/img-logo.svg";
 import "../styles/Footer.css";
 
@@ -82,7 +83,7 @@ const Footer = () => {
           aria-label="TikTok"
           className="social-icon"
         >
-          <FaTiktok aria-hidden="true" />
+           <SiTiktok aria-hidden="true" />
         </a>
         <a 
           href="https://www.facebook.com/tania.laCupula" 

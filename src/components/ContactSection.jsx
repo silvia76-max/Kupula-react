@@ -1,7 +1,9 @@
 import "../styles/ContactSection.css";
 import tiendaImg from "../assets/images/entrada-kupula.jpg";
 import ContactForm from "./ContactForm.jsx";
-import { FaFacebook, FaInstagram, FaWhatsapp, FaEnvelope, FaChevronDown } from "react-icons/fa";
+import { SiTiktok } from "react-icons/si"
+import { FaFacebook, FaInstagram, FaWhatsapp, FaEnvelope} from "react-icons/fa";
+
 const ContactSection = () => {
   return (
     <section id="contacto" className="contact-section">
@@ -45,7 +47,7 @@ const ContactSection = () => {
           aria-label="TikTok"
           className="social-icon"
         >
-          <FaTiktok aria-hidden="true" />
+          <SiTiktok aria-hidden="true" />
         </a>
         <a 
           href="https://www.facebook.com/tania.laCupula" 
