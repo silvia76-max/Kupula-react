@@ -41,7 +41,7 @@ const ContactSection = () => {
       {/* Redes sociales */}
       <nav className="social-icons" aria-label="Redes sociales">
         <a 
-          href="https://www.tiktok.com/@taniadelacupula" 
+          href="https://www.tiktok.com/taniadelacupula" 
           target="_blank" 
           rel="noopener noreferrer" 
           aria-label="TikTok"

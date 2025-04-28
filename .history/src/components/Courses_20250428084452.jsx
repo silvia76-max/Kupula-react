@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from "react";
 import CourseCard from "./CourseCard";
 import "../styles/Courses.css";
