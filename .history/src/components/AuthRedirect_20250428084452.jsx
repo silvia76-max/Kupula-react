@@ -7,12 +7,12 @@ const AuthRedirect = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isLoading) return; 
+    if (isLoading) return; // No hacer nada si se está cargando
 
     if (isAuthenticated) {
-      navigate("/perfil"); 
+      navigate("/perfil"); // Redirige al perfil si está logueado
     } else {
-      navigate("/login"); 
+      navigate("/login"); // Redirige al login si no está logueado
     }
   }, [isAuthenticated, isLoading, navigate]);
 

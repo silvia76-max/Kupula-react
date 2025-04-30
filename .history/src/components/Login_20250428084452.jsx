@@ -5,31 +5,9 @@ const Login = () => {
   const { loginWithRedirect, user, isAuthenticated, logout } = useAuth0();
 
   useEffect(() => {
-    if (isAuthenticated && user) {
+    if (isAuthenticated) {
       console.log("Usuario autenticado:", user);
-    
-      const saveUserToBackend = async () => {
-        try {
-          const response = await fetch('http://localhost:5000/save_user', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              auth0_id: user.sub,  // ID único de Auth0
-              email: user.email,
-              name: user.name || user.nickname || "", // Lo que tengas disponible
-            }),
-          });
-
-          const data = await response.json();
-          console.log('Usuario guardado en la base de datos:', data);
-        } catch (error) {
-          console.error('Error guardando usuario en backend:', error);
-        }
-      };
-
-      saveUserToBackend(); 
+      // Aquí podrías enviar los datos a tu backend si es necesario
     }
   }, [isAuthenticated, user]);
 
